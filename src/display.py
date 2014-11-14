@@ -208,23 +208,23 @@ def plot_model(run = True):
 
 def plot_all(run = True):
     plot_ecg(run = False)
-    Plot("/time/relative", "/respiration/biopac/delayed")
-    Plot("/time/relative", "/respiration/fabric/delayed")
+    Plot("/time/relative", "/y0/stream/respiration/biopac/delayed")
+    Plot("/time/relative", "/y0/stream/respiration/fabric/delayed")
 
     new_figure("Heartrate (BPM) + Respiration")
     Plot("/time/relative", "/bpm")
     Plot("/time/relative", "/avg/bpm/1")
     Plot("/time/relative", "/avg/bpm/2")
-    Plot("/time/relative", "/respiration/biopac/t200", color = "#FF00FF")
-    Plot("/time/relative", "/respiration/fabric/t200", color = "#00FFFF")
+    Plot("/time/relative", "/y0/stream/respiration/biopac/t200", color = "#FF00FF")
+    Plot("/time/relative", "/y0/stream/respiration/fabric/t200", color = "#00FFFF")
     Marker("/time/relative", "/zero", "/bpm", "/marker/text")
 
     plot_heartrate_bpm(run = False)
     Marker("/time/relative", "/zero", "/bpm", "/marker/text")
     new_figure("Respiration")
-    Plot("/time/relative", "/respiration/biopac/delayed", color = "#FF00FF")
-    Plot("/time/relative", "/respiration/fabric/delayed", color = "#00FFFF")
-    Marker("/time/relative", "/zero", "/respiration/biopac/delayed", "/marker/text")
+    Plot("/time/relative", "/y0/stream/respiration/biopac/delayed", color = "#FF00FF")
+    Plot("/time/relative", "/y0/stream/respiration/fabric/delayed", color = "#00FFFF")
+    Marker("/time/relative", "/zero", "/y0/stream/respiration/biopac/delayed", "/marker/text")
     #plot_network(run = False)
     if(run == True):
         allon()

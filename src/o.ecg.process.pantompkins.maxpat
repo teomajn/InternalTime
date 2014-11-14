@@ -42,34 +42,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-23",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 688.0, 440.0, 50.0, 20.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-20",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 688.0, 400.0, 195.0, 20.0 ],
-					"text" : "o.route /respiration/biopac/delayed"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -704,13 +676,13 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-87",
-									"linecount" : 13,
+									"linecount" : 15,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 130.0, 957.0, 195.0 ],
-									"text" : "/y0/stream/time = /stream/time[[/peak/dt]],\n/y0/stream/ecg/mwi = /stream/ecg/mwi[[/peak/dt]],\n/y0/stream/d/ecg/mwi = /stream/d/ecg/mwi[[/peak/dt]],\n/ymdt/stream/d/ecg/mwi = /stream/d/ecg/mwi[[0]],\n/ypdt/stream/d/ecg/mwi = /stream/d/ecg/mwi[[/peak/dt * 2]],\n/y0/stream/ecg/bpf/delayed = /stream/ecg/bpf/delayed[[/peak/dt]],\n/ymdt/stream/ecg/bpf/delayed = /stream/ecg/bpf/delayed[[0]],\n/ypdt/stream/ecg/bpf/delayed = /stream/ecg/bpf/delayed[[/peak/dt * 2]],\nif(((/y0/stream/d/ecg/mwi >= /ymdt/stream/d/ecg/mwi & /y0/stream/d/ecg/mwi >= /ypdt/stream/d/ecg/mwi) | (/y0/stream/d/ecg/mwi <= /ymdt/stream/d/ecg/mwi & /y0/stream/d/ecg/mwi <= /ypdt/stream/d/ecg/mwi)), /peak/d/ecg/mwi = true, /peak/d/ecg/mwi = false),\nif(((/y0/stream/ecg/bpf/delayed >= /ymdt/stream/ecg/bpf/delayed & /y0/stream/ecg/bpf/delayed >= /ypdt/stream/ecg/bpf/delayed) | (/y0/stream/ecg/bpf/delayed <= /ymdt/stream/ecg/bpf/delayed & /y0/stream/ecg/bpf/delayed <= /ypdt/stream/ecg/bpf/delayed)), /peak/ecg/bpf/delayed = true, /peak/ecg/bpf/delayed = false)",
+									"patching_rect" : [ 50.0, 130.0, 957.0, 222.0 ],
+									"text" : "/y0/stream/time = /stream/time[[/peak/dt]],\n/y0/stream/ecg/mwi = /stream/ecg/mwi[[/peak/dt]],\n/y0/stream/d/ecg/mwi = /stream/d/ecg/mwi[[/peak/dt]],\n/y0/stream/respiration/biopac/delayed = /stream/respiration/biopac/delayed[[/peak/dt]],\n/y0/stream/respiration/fabric/delayed = /stream/respiration/fabric/delayed[[/peak/dt]],\n/ymdt/stream/d/ecg/mwi = /stream/d/ecg/mwi[[0]],\n/ypdt/stream/d/ecg/mwi = /stream/d/ecg/mwi[[/peak/dt * 2]],\n/y0/stream/ecg/bpf/delayed = /stream/ecg/bpf/delayed[[/peak/dt]],\n/ymdt/stream/ecg/bpf/delayed = /stream/ecg/bpf/delayed[[0]],\n/ypdt/stream/ecg/bpf/delayed = /stream/ecg/bpf/delayed[[/peak/dt * 2]],\nif(((/y0/stream/d/ecg/mwi >= /ymdt/stream/d/ecg/mwi & /y0/stream/d/ecg/mwi >= /ypdt/stream/d/ecg/mwi) | (/y0/stream/d/ecg/mwi <= /ymdt/stream/d/ecg/mwi & /y0/stream/d/ecg/mwi <= /ypdt/stream/d/ecg/mwi)), /peak/d/ecg/mwi = true, /peak/d/ecg/mwi = false),\nif(((/y0/stream/ecg/bpf/delayed >= /ymdt/stream/ecg/bpf/delayed & /y0/stream/ecg/bpf/delayed >= /ypdt/stream/ecg/bpf/delayed) | (/y0/stream/ecg/bpf/delayed <= /ymdt/stream/ecg/bpf/delayed & /y0/stream/ecg/bpf/delayed <= /ypdt/stream/ecg/bpf/delayed)), /peak/ecg/bpf/delayed = true, /peak/ecg/bpf/delayed = false)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -847,7 +819,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 67.5, 412.0, 32.5, 20.0 ],
+									"patching_rect" : [ 67.5, 488.5, 32.5, 20.0 ],
 									"text" : "t l l"
 								}
 
@@ -856,13 +828,13 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-83",
-									"linecount" : 10,
+									"linecount" : 16,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 67.5, 244.0, 1058.0, 154.0 ],
-									"text" : "/peak/dt ??= 1,\n/stream/ecg/mwi ??= [],\n/stream/d/ecg/mwi ??= [],\n/stream/ecg/bpf/delayed ??= [],\n/stream/time ??= [],\n/stream/ecg/mwi = length(/stream/ecg/mwi) == /peak/dt * 2 + 1 ? [rest(/stream/ecg/mwi), /was/ecg/mwi] : [/stream/ecg/mwi, /was/ecg/mwi],\n/stream/d/ecg/mwi = length(/stream/d/ecg/mwi) == /peak/dt * 2 + 1 ? [rest(/stream/d/ecg/mwi), /d/ecg/mwi] : [/stream/d/ecg/mwi, /d/ecg/mwi],\n/stream/ecg/bpf/delayed = length(/stream/ecg/bpf/delayed) == /peak/dt * 2 + 1 ? [rest(/stream/ecg/bpf/delayed), /was/was/ecg/bpf/delayed] : [/stream/ecg/bpf/delayed, /was/was/ecg/bpf/delayed],\n/stream/time = length(/stream/time) == /peak/dt * 2 + 1 ? [rest(/stream/time), /time] : [/stream/time, /time]",
+									"patching_rect" : [ 67.5, 244.0, 1058.0, 236.0 ],
+									"text" : "/peak/dt ??= 1,\n/stream/ecg/mwi ??= [],\n/stream/d/ecg/mwi ??= [],\n/stream/ecg/bpf/delayed ??= [],\n/stream/time ??= [],\n/stream/respiration/biopac/delayed ??= [],\n/stream/respiration/fabric/delayed ??= [],\n/stream/ecg/mwi = length(/stream/ecg/mwi) == /peak/dt * 2 + 1 ? [rest(/stream/ecg/mwi), /was/ecg/mwi] : [/stream/ecg/mwi, /was/ecg/mwi],\n/stream/d/ecg/mwi = length(/stream/d/ecg/mwi) == /peak/dt * 2 + 1 ? [rest(/stream/d/ecg/mwi), /d/ecg/mwi] : [/stream/d/ecg/mwi, /d/ecg/mwi],\n/stream/ecg/bpf/delayed = length(/stream/ecg/bpf/delayed) == /peak/dt * 2 + 1 ? [rest(/stream/ecg/bpf/delayed), /was/was/ecg/bpf/delayed] : [/stream/ecg/bpf/delayed, /was/was/ecg/bpf/delayed],\n/stream/time = length(/stream/time) == /peak/dt * 2 + 1 ? [rest(/stream/time), /time] : [/stream/time, /time],\n/stream/respiration/biopac/delayed = length(/stream/respiration/biopac/delayed) == /peak/dt * 2 + 1 ? [rest(/stream/respiration/biopac/delayed), /respiration/biopac/delayed] : [/stream/respiration/biopac/delayed, /respiration/biopac/delayed],\n/stream/respiration/fabric/delayed = length(/stream/respiration/fabric/delayed) == /peak/dt * 2 + 1 ? [rest(/stream/respiration/fabric/delayed), /respiration/fabric/delayed] : [/stream/respiration/fabric/delayed, /respiration/fabric/delayed]",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -954,7 +926,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 67.5, 508.5, 25.0, 25.0 ]
+									"patching_rect" : [ 67.5, 528.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -1018,7 +990,7 @@
 									"destination" : [ "obj-84", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 90.5, 446.0, 51.5, 446.0, 51.5, 203.0, 108.0, 203.0 ],
+									"midpoints" : [ 90.5, 516.0, 51.5, 516.0, 51.5, 203.0, 108.0, 203.0 ],
 									"source" : [ "obj-82", 1 ]
 								}
 
@@ -1715,8 +1687,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 72.0, 608.0, 467.0, 141.0 ],
-					"text" : "/lower = /m - (sqrt(/S / /n) * /nstdevs ?? 1.0),\n/upper = /m + (sqrt(/S / /n) * /nstdevs ?? 1.0),\nif(bound(/rr), /bpm = 60. / /rr, nil),\nif(bound(/avg/rr/1), /avg/bpm/1 = 60. / /avg/rr/1, nil),\nif(bound(/avg/rr/2), /avg/bpm/2 = 60. / /avg/rr/2, nil),\n/time/delta = /time - /was/time,\n/time/network/delta = /time/network - /was/time/network,\n/respiration/biopac/t200 = /respiration/biopac/delayed * 200.,\n/respiration/fabric/t200 = /respiration/fabric/delayed * 200.",
+					"patching_rect" : [ 72.0, 608.0, 610.0, 141.0 ],
+					"text" : "/lower = /m - (sqrt(/S / /n) * /nstdevs ?? 1.0),\n/upper = /m + (sqrt(/S / /n) * /nstdevs ?? 1.0),\nif(bound(/rr), /bpm = 60. / /rr, nil),\nif(bound(/avg/rr/1), /avg/bpm/1 = 60. / /avg/rr/1, nil),\nif(bound(/avg/rr/2), /avg/bpm/2 = 60. / /avg/rr/2, nil),\n/time/delta = /time - /was/time,\n/time/network/delta = /time/network - /was/time/network,\n/y0/stream/respiration/biopac/t200 = /y0/stream/respiration/biopac/delayed * 200.,\n/y0/stream/respiration/fabric/t200 = /y0/stream/respiration/fabric/delayed * 200.",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -2304,28 +2276,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-20", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-24", 0 ]
 				}
 
 			}
@@ -2685,14 +2639,14 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "onlyone.maxpat",
-				"bootpath" : "/Users/john/Development/Cascade/src",
+				"bootpath" : "/Users/john/Development/InternalTime/src",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.firfilter.maxpat",
-				"bootpath" : "/Users/john/Development/Cascade/src",
+				"bootpath" : "/Users/john/Development/InternalTime/src",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

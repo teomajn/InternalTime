@@ -80,7 +80,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 320.0, 408.0, 150.0, 102.0 ],
-					"text" : "/marker/text : \"hold_recover\",\n/zero : 0,\n/time/relative : 967.785,\n/bpm : 69.3589",
+					"text" : "/marker/text : \"hold_recover\",\n/zero : 0,\n/time/relative : 1020.63,\n/bpm : 82.1943",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -196,8 +196,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 144.0, 264.0, 156.0, 20.0 ],
-					"text" : "o.gather /bpm /time/relative"
+					"patching_rect" : [ 144.0, 264.0, 555.0, 20.0 ],
+					"text" : "o.gather /bpm /time/relative /y0/stream/respiration/biopac/delayed /y0/stream/respiration/fabric/delayed"
 				}
 
 			}

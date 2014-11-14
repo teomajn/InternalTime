@@ -29,6 +29,34 @@
 		"tags" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "multislider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 800.0, 416.0, 248.0, 124.0 ],
+					"setminmax" : [ 0.0, 1.0 ],
+					"setstyle" : 5
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "FullPacket" ],
+					"patching_rect" : [ 800.0, 368.0, 172.0, 20.0 ],
+					"text" : "o.route /respiration/biopac/raw"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-28",
@@ -832,6 +860,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-144", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -913,6 +950,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -977,21 +1023,21 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "o.io.condition.xosc.maxpat",
-				"bootpath" : "/Users/john/Development/Cascade/src",
+				"bootpath" : "/Users/john/Development/InternalTime/src",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.io.situate.xosc.maxpat",
-				"bootpath" : "/Users/john/Development/Cascade/src",
+				"bootpath" : "/Users/john/Development/InternalTime/src",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.relative-time.maxpat",
-				"bootpath" : "/Users/john/Development/Cascade/src",
+				"bootpath" : "/Users/john/Development/InternalTime/src",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -1012,7 +1058,7 @@
 			}
 , 			{
 				"name" : "o.io.resample.maxpat",
-				"bootpath" : "/Users/john/Development/Cascade/src",
+				"bootpath" : "/Users/john/Development/InternalTime/src",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
