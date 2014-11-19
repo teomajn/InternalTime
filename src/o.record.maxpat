@@ -259,8 +259,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 236.0, 96.0, 135.0, 18.0 ],
-					"text" : "20141112-17:38:05.osc"
+					"patching_rect" : [ 236.0, 96.0, 128.0, 18.0 ],
+					"text" : "20141113-173627.osc"
 				}
 
 			}
@@ -273,8 +273,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 104.0, 32.0, 216.0, 18.0 ],
-					"text" : "/Users/john/Development/Cascade/dat"
+					"patching_rect" : [ 104.0, 32.0, 235.0, 18.0 ],
+					"text" : "/Users/john/Development/InternalTime/dat"
 				}
 
 			}
@@ -420,7 +420,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 352.0, 440.0, 264.0, 61.0 ],
-					"text" : "/otable/info/name,\n/otable/info/count : 216048,\n/otable/info/bytecount : 1229423380",
+					"text" : "/otable/info/name,\n/otable/info/count : 206097,\n/otable/info/bytecount : 1219259032",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
