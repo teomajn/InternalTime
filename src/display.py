@@ -26,7 +26,9 @@ plots = []
 markers = []
 dirty = False
 data_thread = None
+data_thread_continue = False
 update_thread = None
+update_thread_continue = False
 colors = make_colors()
 
 class Plot:
@@ -70,27 +72,36 @@ def new_figure(title = "", xlabel = "", ylabel = "", width = 1000, height = 300)
     hold()
 
 def update_plot():
-    global dirty, plots
+    global dirty, plots, update_thread, update_thread_continue
     while True:
         with threading.Lock():
             if dirty == True:
-                print "updating plot"
+            	dirty = False
             	s = cursession()
             	for plot in plots:
                     cursession().store_objects(plot.data_source)
             	for marker in markers:
                     cursession().store_objects(marker.data_source)
-            	dirty = False
-        	print "done"
+            if update_thread_continue == False:
+            	return
         time.sleep(0.1)
 
 def udp_receive_data(port):
-    global dirty, plots
+    global dirty, plots, data_thread, data_thread_continue
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sock.settimeout(1.0)
     sock.bind((UDP_IP, port))
     shoulddirty = False
     while True:
-    	data, addr = sock.recvfrom(8192)
+    	try:
+            data, addr = sock.recvfrom(8192)
+        except socket.timeout:
+            with threading.Lock():
+                if data_thread_continue == False:
+                    sock.close()
+                    return
+                else:
+                    continue
         bndl_u = o.osc_bundle_s_deserialize_r(len(data), data)
         for plot in plots:
             if plot.active == True:
@@ -126,6 +137,10 @@ def udp_receive_data(port):
         if shoulddirty == True:
             dirty = True
         o.osc_bundle_u_free(bndl_u)
+        with threading.Lock():
+            if data_thread_continue == False:
+                sock.close()
+		return
 
 def get_float_for_address(address, bndl_u):
     global dirty
@@ -153,6 +168,17 @@ def get_string_for_address(address, bndl_u):
     o.osc_array_free(msgs)
     return None
 
+def clear():
+    global plots, markers, dirty
+    with threading.Lock():
+    	for plot in plots:
+            plot.data_source.data["x"] = []
+            plot.data_source.data["y"] = []
+    	for marker in markers:
+            marker.data_source.data["xs"] = []
+            marker.data_source.data["ys"] = []
+        dirty = True
+
 def plot_ecg(run = True, make_new_figure = True):
     if make_new_figure == True:
     	new_figure("ECG")
@@ -160,13 +186,17 @@ def plot_ecg(run = True, make_new_figure = True):
     Plot("/time/relative", "/y0/stream/ecg/mwi", color = "#00FF00")
     Plot("/time/relative", "/y0/stream/d/ecg/mwi", color = "#0000FF")
     #Plot("/time/relative", "/peak/QRS/bool", color = "#00FF00")
-    Plot("/time/relative", "/I1", color = "#00FFFF")
-    Plot("/time/relative", "/I2", color = "#00FFFF")
-    Plot("/time/relative", "/F1", color = "#0000FF")
-    Plot("/time/relative", "/F2", color = "#0000FF")
-    Plot("/time/relative", "/r", color = "#000000", f = x)
+    Plot("/time/relative", "/I1", color = "#FF0000")
+    Plot("/time/relative", "/I2", color = "#00FF00")
+    Plot("/time/relative", "/F1", color = "#00FFFF")
+    Plot("/time/relative", "/F2", color = "#FFFF00")
+    #Plot("/time/relative", "/r", color = "#000000", f = x)
     Plot("/time/relative", "/lower", color = "#000000")
     Plot("/time/relative", "/upper", color = "#000000")
+    #Plot("/time/relative", "/feature/mwi/raw", color = "#00FF00", f = x)
+    Plot("/time/relative", "/feature/mwi/d", color = "#0000FF", f = x)
+    Plot("/time/relative", "/feature/bpf/raw", color = "#FF0000", f = x)
+    Plot("/feature/both/time", "/feature/both/val", color = "#FF0000", f = circle_x)
     if run == True:
         allon()
 
@@ -272,22 +302,57 @@ def main(argv):
         #     plot["plot"] = line([], [], color=colors[j], tools="box_zoom,pan,previewsave,reset,resize,wheel_zoom", x_range = plot["x_range"])
         #     plot["ds"].append(plot["plot"].renderers[-1].data_source)
 	# plots.append(plot)
+    start_threads()
         
-
+def start_data_thread():
+    global data_thread_continue, data_thread
     try:
+        data_thread_continue = True
         data_thread = threading.Thread(target=udp_receive_data, args=[data_port])
         data_thread.start()
     except:
     	print "Error: couldn't start data thread"
         sys.exit(2)
+
+def start_update_thread():
+    global update_thread_continue, update_thread
     try:
+        update_thread_continue = True
         update_thread = threading.Thread(target=update_plot)
         update_thread.start()
     except:
     	print "Error: couldn't start update thread"
         sys.exit(2)
 
-    show()
+def start_threads():
+    start_data_thread()
+    start_update_thread()
+
+def stop_data_thread():
+    global data_thread_continue, data_thread
+    data_thread_continue = False
+    print "stopping data thread"
+    if data_thread != None:
+    	data_thread.join()
+    print "done"
+
+def stop_update_thread():
+    global update_thread_continue, update_thread
+    update_thread_continue = False
+    print "stopping update thread"
+    if update_thread != None:
+    	update_thread.join()
+    print "done"
+
+def stop_threads():
+    stop_data_thread()
+    stop_update_thread()
+
+def start():
+    start_threads()
+
+def stop():
+    stop_threads()
 
 if __name__ == "__main__":
     main(sys.argv[1:])
