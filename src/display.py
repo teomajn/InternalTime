@@ -190,7 +190,7 @@ def plot_ecg(run = True, make_new_figure = True):
     Plot("/time/relative", "/I2", color = "#00FF00")
     Plot("/time/relative", "/F1", color = "#00FFFF")
     Plot("/time/relative", "/F2", color = "#FFFF00")
-    #Plot("/time/relative", "/r", color = "#000000", f = x)
+    Plot("/time/relative", "/r", color = "#000000", f = x)
     Plot("/time/relative", "/lower", color = "#000000")
     Plot("/time/relative", "/upper", color = "#000000")
     #Plot("/time/relative", "/feature/mwi/raw", color = "#00FF00", f = x)

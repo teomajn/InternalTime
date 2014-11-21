@@ -35,7 +35,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 800.0, 416.0, 248.0, 124.0 ],
+					"patching_rect" : [ 184.0, 648.0, 248.0, 124.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
 					"setstyle" : 5
 				}
@@ -50,7 +50,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 800.0, 368.0, 172.0, 20.0 ],
+					"patching_rect" : [ 184.0, 600.0, 172.0, 20.0 ],
 					"text" : "o.route /respiration/biopac/raw"
 				}
 
@@ -833,6 +833,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-120", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-144", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -909,6 +918,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-16", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 2 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-2", 1 ]
 				}
 
 			}
