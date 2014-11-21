@@ -63,7 +63,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 696.0, 640.0, 137.0, 20.0 ],
+					"patching_rect" : [ 500.0, 616.0, 137.0, 20.0 ],
 					"text" : "udpsend localhost 5005"
 				}
 
@@ -76,7 +76,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 696.0, 600.0, 150.0, 24.0 ],
+					"patching_rect" : [ 500.0, 576.0, 150.0, 24.0 ],
 					"saved_bundle_data" : [  ],
 					"saved_bundle_length" : 0,
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]

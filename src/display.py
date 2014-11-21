@@ -179,26 +179,27 @@ def clear():
             marker.data_source.data["ys"] = []
         dirty = True
 
-def plot_ecg(run = True, make_new_figure = True):
-    if make_new_figure == True:
-    	new_figure("ECG")
-    Plot("/time/relative", "/y0/stream/ecg/bpf/delayed", color = "#FF0000")
-    Plot("/time/relative", "/y0/stream/ecg/mwi", color = "#00FF00")
-    Plot("/time/relative", "/y0/stream/d/ecg/mwi", color = "#0000FF")
-    #Plot("/time/relative", "/peak/QRS/bool", color = "#00FF00")
-    Plot("/time/relative", "/I1", color = "#FF0000")
-    Plot("/time/relative", "/I2", color = "#00FF00")
-    Plot("/time/relative", "/F1", color = "#00FFFF")
-    Plot("/time/relative", "/F2", color = "#FFFF00")
-    Plot("/time/relative", "/r", color = "#000000", f = x)
-    Plot("/time/relative", "/lower", color = "#000000")
-    Plot("/time/relative", "/upper", color = "#000000")
-    #Plot("/time/relative", "/feature/mwi/raw", color = "#00FF00", f = x)
-    Plot("/time/relative", "/feature/mwi/d", color = "#0000FF", f = x)
-    Plot("/time/relative", "/feature/bpf/raw", color = "#FF0000", f = x)
-    Plot("/feature/both/time", "/feature/both/val", color = "#FF0000", f = circle_x)
-    if run == True:
-        allon()
+def plot_ecg(run = True, make_new_figure = True, prefixes = ["/0"]):
+    for pfx in prefixes:
+        if make_new_figure == True:
+            new_figure("ECG")
+    	Plot(pfx + "/time/relative", pfx + "/y0/stream/ecg/bpf/delayed", color = "#FF0000")
+    	Plot(pfx + "/time/relative", pfx + "/y0/stream/ecg/mwi", color = "#00FF00")
+    	Plot(pfx + "/time/relative", pfx + "/y0/stream/d/ecg/mwi", color = "#0000FF")
+    	#Plot(pfx + "/time/relative", pfx + "/peak/QRS/bool", color = "#00FF00")
+    	Plot(pfx + "/time/relative", pfx + "/I1", color = "#FF0000")
+    	Plot(pfx + "/time/relative", pfx + "/I2", color = "#00FF00")
+    	Plot(pfx + "/time/relative", pfx + "/F1", color = "#00FFFF")
+    	Plot(pfx + "/time/relative", pfx + "/F2", color = "#FFFF00")
+    	Plot(pfx + "/time/relative", pfx + "/r", color = "#000000", f = x)
+    	Plot(pfx + "/time/relative", pfx + "/lower", color = "#000000")
+    	Plot(pfx + "/time/relative", pfx + "/upper", color = "#000000")
+    	#Plot(pfx + "/time/relative", pfx + "/feature/mwi/raw", color = "#00FF00", f = x)
+    	Plot(pfx + "/time/relative", pfx + "/feature/mwi/d", color = "#0000FF", f = x)
+    	Plot(pfx + "/time/relative", pfx + "/feature/bpf/raw", color = "#FF0000", f = x)
+    	Plot(pfx + "/feature/both/time", pfx + "/feature/both/val", color = "#FF0000", f = circle_x)
+    	if run == True:
+            allon()
 
 def plot_heartrate_rr(run = True, make_new_figure = True):
     if make_new_figure == True:
