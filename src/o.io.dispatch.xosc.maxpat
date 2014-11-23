@@ -1137,20 +1137,6 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"id" : "obj-151",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 21.0, 216.0, 104.0, 20.0 ],
-					"text" : "o.in @udpreceive"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
 					"id" : "obj-147",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -1379,15 +1365,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-66", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-151", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1550,7 +1527,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-151", 0 ],
+					"destination" : [ "obj-66", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-3", 0 ]
@@ -1743,7 +1720,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "o.in.maxpat",
+				"name" : "o.out.maxpat",
 				"bootpath" : "/Users/john/Development/CNMAT/CNMAT/CNMAT-odot/dev",
 				"patcherrelativepath" : "../../CNMAT/CNMAT/CNMAT-odot/dev",
 				"type" : "JSON",
@@ -1764,7 +1741,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "o.out.maxpat",
+				"name" : "o.in.maxpat",
 				"bootpath" : "/Users/john/Development/CNMAT/CNMAT/CNMAT-odot/dev",
 				"patcherrelativepath" : "../../CNMAT/CNMAT/CNMAT-odot/dev",
 				"type" : "JSON",
