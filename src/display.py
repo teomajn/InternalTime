@@ -93,10 +93,11 @@ class Plot:
 
 class Marker:
     global markers
-    def __init__(self, xaddress, yminaddress, ymaxaddress, textaddress, color = "#000000"):
-        self.xaddress = xaddress
-        self.yminaddress = yminaddress
-        self.ymaxaddress = ymaxaddress
+    def __init__(self, x1address, y1address, x2address, y2address, textaddress = None, color = "#000000"):
+        self.x1address = x1address
+        self.x2address = x2address
+        self.y1address = y1address
+        self.y2address = y2address
         self.textaddress = textaddress
         self.color = color
         self.plot = multi_line([], [], color = self.color)
@@ -161,23 +162,26 @@ def udp_receive_data(port):
                         #plot.add_data(xval, yval)
                         shoulddirty = True
         for marker in markers:
-            xaddy = marker.xaddress
-            yminaddy = marker.yminaddress
-            ymaxaddy = marker.ymaxaddress
+            x1addy = marker.x1address
+            x2addy = marker.x2address
+            y1addy = marker.y1address
+            y2addy = marker.y2address
             textaddy = marker.textaddress
-            xval = get_float_for_address(xaddy, bndl_u)
-            yminval = get_float_for_address(yminaddy, bndl_u)
-            ymaxval = get_float_for_address(ymaxaddy, bndl_u)
-            if yminval == None:
-                yminval = 0
-            if ymaxval == None:
-                ymaxval = 1
-            text = get_string_for_address(textaddy, bndl_u)
+            x1val = get_float_for_address(x1addy, bndl_u)
+            x2val = get_float_for_address(x2addy, bndl_u)
+            y1val = get_float_for_address(y1addy, bndl_u)
+            y2val = get_float_for_address(y2addy, bndl_u)
+            if y1val == None:
+                y1val = 0
+            if y2val == None:
+                y2val = 1
+            if textaddy != None:
+            	text = get_string_for_address(textaddy, bndl_u)
             ds = marker.data_source
-            if(xval != None and text != None):
+            if x1val != None and x2val != None:
                 with threading.Lock():
-                    ds.data["xs"].append([xval, xval])
-                    ds.data["ys"].append([yminval, ymaxval])
+                    ds.data["xs"].append([x1val, x2val])
+                    ds.data["ys"].append([y1val, y2val])
                     shoulddirty = True
         if shoulddirty == True:
             dirty = True
@@ -228,21 +232,14 @@ def plot_ecg(run = True, make_new_figure = True, prefixes = ["/0"]):
     for pfx in prefixes:
         if make_new_figure == True:
             new_figure("ECG")
-    	Plot(pfx + "/time/relative", pfx + "/y0/stream/ecg/bpf/delayed", color = "#FF0000")
-    	Plot(pfx + "/time/relative", pfx + "/y0/stream/ecg/mwi", color = "#00FF00")
-    	Plot(pfx + "/time/relative", pfx + "/y0/stream/d/ecg/mwi", color = "#0000FF")
-    	#Plot(pfx + "/time/relative", pfx + "/peak/QRS/bool", color = "#00FF00")
+    	Plot(pfx + "/time/relative", pfx + "/ecg/mwi")
+    	Plot(pfx + "/time/relative", pfx + "/delayed/ecg/bpf")
+	Plot(pfx + "/peak/QRS/time/relative", pfx + "/peak/QRS/val", f = circle, color = "#0000FF")
     	Plot(pfx + "/time/relative", pfx + "/I1", color = "#FF0000")
     	Plot(pfx + "/time/relative", pfx + "/I2", color = "#00FF00")
     	Plot(pfx + "/time/relative", pfx + "/F1", color = "#00FFFF")
     	Plot(pfx + "/time/relative", pfx + "/F2", color = "#FFFF00")
-    	Plot(pfx + "/time/relative", pfx + "/r", color = "#000000", f = x)
-    	Plot(pfx + "/time/relative", pfx + "/lower", color = "#000000")
-    	Plot(pfx + "/time/relative", pfx + "/upper", color = "#000000")
-    	#Plot(pfx + "/time/relative", pfx + "/feature/mwi/raw", color = "#00FF00", f = x)
-    	Plot(pfx + "/time/relative", pfx + "/feature/mwi/d", color = "#0000FF", f = x)
-    	Plot(pfx + "/time/relative", pfx + "/feature/bpf/raw", color = "#FF0000", f = x)
-    	Plot(pfx + "/feature/both/time", pfx + "/feature/both/val", color = "#FF0000", f = circle_x)
+	#Marker(pfx + "/peak/hist/delayed/ecg/bpf/time/relative", pfx + "/peak/hist/delayed/ecg/bpf/val", pfx + "/peak/hist/ecg/mwi/time/relative", pfx + "/peak/hist/ecg/mwi/val")
     	if run == True:
             allon()
 
@@ -250,9 +247,9 @@ def plot_heartrate_rr(run = True, make_new_figure = True, prefixes = ["/0"]):
     for pfx in prefixes:
     	if make_new_figure == True:
             new_figure("Heartrate (RR)")
-    	Plot(pfx + "/time/relative", pfx + "/rr")
-    	Plot(pfx + "/time/relative", pfx + "/avg/rr/1")
-    	Plot(pfx + "/time/relative", pfx + "/avg/rr/2")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/RR")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/RR/1")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/RR/2")
     	if run == True:
             allon()
 
@@ -260,9 +257,9 @@ def plot_heartrate_bpm(run = True, make_new_figure = True, prefixes = ["/0"]):
     for pfx in prefixes:
     	if make_new_figure == True:
             new_figure("Heartrate (BPM)")
-    	Plot(pfx + "/time/relative", pfx + "/bpm")
-    	Plot(pfx + "/time/relative", pfx + "/avg/bpm/1")
-    	Plot(pfx + "/time/relative", pfx + "/avg/bpm/2")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/BPM")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/1")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/2")
     	if run == True:
             allon()
 
@@ -298,6 +295,17 @@ def plot_all(run = True, prefixes = ["/0"]):
     	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/fabric/delayed", color = "#00FFFF")
     	# Marker(pfx + "/time/relative", pfx + "/zero", pfx + "/y0/stream/respiration/biopac/delayed", pfx + "/marker/text")
     	#plot_network(run = False)
+    if(run == True):
+        allon()
+
+def plot_features(run = True, prefixes = ["/0"]):
+    plot_ecg(run = False, prefixes = prefixes)
+    for pfx in prefixes:
+    	#Plot(pfx + "/time/relative", pfx + "/feature/mwi/raw", color = "#00FF00", f = x)
+        #Plot(pfx + "/time/relative", pfx + "/slope/ecg/bpf/delayed", color = "#FF00FF")
+    	Plot(pfx + "/time/relative", pfx + "/feature/mwi/d", color = "#0000FF", f = x)
+    	Plot(pfx + "/time/relative", pfx + "/feature/bpf/raw", color = "#FF0000", f = x)
+    	Plot(pfx + "/feature/both/time", pfx + "/feature/both/val", color = "#FF0000", f = circle_x)
     if(run == True):
         allon()
 
