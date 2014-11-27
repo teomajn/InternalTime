@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 1000.0, 475.0, 466.0, 336.0 ],
+		"rect" : [ 1.0, 548.0, 466.0, 336.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 39.0, 199.0, 180.5, 88.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
-					"size" : 16
+					"size" : 16,
+					"spacing" : 2
 				}
 
 			}
@@ -79,7 +80,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 239.0, 199.0, 180.5, 88.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
-					"size" : 16
+					"size" : 16,
+					"spacing" : 2
 				}
 
 			}
