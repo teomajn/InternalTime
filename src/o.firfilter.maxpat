@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 50.0, 94.0, 814.0, 487.0 ],
+		"rect" : [ 746.0, 44.0, 814.0, 487.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -34,7 +34,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 56.0, 360.0, 25.0, 25.0 ]
+					"patching_rect" : [ 56.0, 440.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -47,7 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 56.0, 336.0, 79.0, 20.0 ],
+					"patching_rect" : [ 56.0, 416.0, 79.0, 20.0 ],
 					"text" : "o.out @main"
 				}
 
@@ -102,7 +102,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 56.0, 216.0, 32.5, 20.0 ],
+					"patching_rect" : [ 56.0, 264.0, 32.5, 20.0 ],
 					"text" : "t l l"
 				}
 
@@ -111,13 +111,13 @@
 				"box" : 				{
 					"fontsize" : 12.0,
 					"id" : "obj-49",
-					"linecount" : 2,
+					"linecount" : 5,
 					"maxclass" : "o.expr.codebox",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 56.0, 160.0, 668.0, 46.0 ],
-					"text" : "/stream/x ??= [],\n/stream/x = length(/stream/x) == length(/filt) ? [rest(/stream/x), /x] : [/stream/x, /x]",
+					"patching_rect" : [ 56.0, 160.0, 531.0, 86.0 ],
+					"text" : "/hist/firfilter/input ??= [],\n/hist/firfilter/input = \n    length(/hist/firfilter/input) == length(/firfilter/coefficients) ? \n    [rest(/hist/firfilter/input), /firfilter/input] : \n    [/hist/firfilter/input, /firfilter/input]",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -140,12 +140,13 @@
 				"box" : 				{
 					"fontsize" : 12.0,
 					"id" : "obj-11",
+					"linecount" : 2,
 					"maxclass" : "o.expr.codebox",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 56.0, 284.0, 272.0, 32.0 ],
-					"text" : "/y = sum(reverse(/stream/x) * /filt)",
+					"patching_rect" : [ 56.0, 332.0, 690.0, 46.0 ],
+					"text" : "/firfilter/output = sum(reverse(/hist/firfilter/input) * /firfilter/coefficients),\n/delayed/firfilter/input = /hist/firfilter/input[[round(length(/firfilter/coefficients) / 2)]]",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -159,8 +160,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 56.0, 248.0, 197.0, 20.0 ],
-					"text" : "o.if length(/stream/x) == length(/filt)"
+					"patching_rect" : [ 56.0, 296.0, 318.0, 20.0 ],
+					"text" : "o.if length(/hist/firfilter/input) == length(/firfilter/coefficients)"
 				}
 
 			}
@@ -224,7 +225,7 @@
 					"destination" : [ "obj-44", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 79.0, 243.0, 728.0, 243.0, 728.0, 121.0, 96.5, 121.0 ],
+					"midpoints" : [ 79.0, 289.0, 728.0, 289.0, 728.0, 121.0, 96.5, 121.0 ],
 					"source" : [ "obj-50", 1 ]
 				}
 
