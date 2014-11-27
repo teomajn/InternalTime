@@ -35,7 +35,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 63.5, 220.5, 150.0, 32.0 ],
+					"patching_rect" : [ 63.5, 256.0, 150.0, 32.0 ],
 					"text" : "/was/time = /time",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
@@ -45,12 +45,13 @@
 				"box" : 				{
 					"fontsize" : 12.0,
 					"id" : "obj-92",
+					"linecount" : 2,
 					"maxclass" : "o.expr.codebox",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 50.0, 146.5, 495.0, 32.0 ],
-					"text" : "/time/relative = /time/relative ?? 0 + (/time - /was/time ?? /time)",
+					"patching_rect" : [ 50.0, 146.5, 495.0, 46.0 ],
+					"text" : "/was/time/relative = /time/relative ?? 0,\n/time/relative = /time/relative ?? 0 + (/time - /was/time ?? /time)",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -78,7 +79,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 63.5, 264.5, 180.0, 20.0 ],
+					"patching_rect" : [ 63.5, 300.0, 180.0, 20.0 ],
 					"text" : "o.gather /time/relative /was/time"
 				}
 
@@ -92,7 +93,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.0, 188.5, 32.5, 20.0 ],
+					"patching_rect" : [ 50.0, 224.0, 32.5, 20.0 ],
 					"text" : "t l l"
 				}
 
@@ -104,7 +105,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "FullPacket" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 50.0, 40.0, 25.0, 25.0 ]
 				}
 
@@ -128,7 +129,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 355.0, 25.0, 25.0 ]
+					"patching_rect" : [ 50.0, 390.5, 25.0, 25.0 ]
 				}
 
 			}
@@ -205,6 +206,45 @@
 					"source" : [ "obj-95", 0 ]
 				}
 
+			}
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "o.gather.maxpat",
+				"bootpath" : "/Users/john/Development/CNMAT/CNMAT/CNMAT-odot/patchers/namespace",
+				"patcherrelativepath" : "../../CNMAT/CNMAT/CNMAT-odot/patchers/namespace",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.righttoleft.maxpat",
+				"bootpath" : "/Users/john/Development/CNMAT/CNMAT/CNMAT-odot/patchers/ordering",
+				"patcherrelativepath" : "../../CNMAT/CNMAT/CNMAT-odot/patchers/ordering",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.intersection.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.collect.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.difference.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.compose.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.expr.codebox.mxo",
+				"type" : "iLaX"
 			}
  ]
 	}
