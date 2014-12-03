@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 9,
 			"architecture" : "x86"
 		}
 ,
@@ -46,8 +46,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 88.0, 184.0, 39.0, 20.0 ],
-					"text" : "s osc"
+					"patching_rect" : [ 88.0, 184.0, 47.0, 20.0 ],
+					"text" : "s polar"
 				}
 
 			}
@@ -61,7 +61,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 88.0, 40.0, 1080.0, 116.0 ],
-					"text" : "/8E79BD84_88D5_41F4_B8E0_5704A5569027/characteristic/peripheral/name/Polar_H7_0055B1/characteristic/2a37 : blob(22, 76, -109, 2, 72, 1, 0, 0),\n/self : \"/8E79BD84_88D5_41F4_B8E0_5704A5569027\",\n/8E79BD84_88D5_41F4_B8E0_5704A5569027/peripheral/name : \"Polar H7 0055B1\",\n/8E79BD84_88D5_41F4_B8E0_5704A5569027/characteristic/uuid : \"2a37\",\n/peripheral/name : \"Polar_H7_0055B1\",\n/heart/rate/value/bpm : 76,\n/heart/rate/value/bps : 1.26667",
+					"text" : "/2834542F_ACB9_42F1_B4A6_C3AA925CBF80/characteristic/peripheral/name/Polar_H7_25A661/characteristic/2a37 : blob(22, 86, -58, 2, -60, 2, 0, 0),\n/self : \"/2834542F_ACB9_42F1_B4A6_C3AA925CBF80\",\n/2834542F_ACB9_42F1_B4A6_C3AA925CBF80/peripheral/name : \"Polar H7 25A661\",\n/2834542F_ACB9_42F1_B4A6_C3AA925CBF80/characteristic/uuid : \"2a37\",\n/peripheral/name : \"Polar_H7_25A661\",\n/heart/rate/value/bpm : 86,\n/heart/rate/value/bps : 1.43333",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
