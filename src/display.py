@@ -46,7 +46,7 @@ class Plot:
     all_data_x = []
     all_data_y = []
     active = False
-    def __init__(self, xaddress, yaddress, color = None, f = line, display_window_sec = 20):
+    def __init__(self, xaddress, yaddress, color = None, f = line, display_window_sec = 5):
         self.xaddress = xaddress
         self.yaddress = yaddress
         self.display_window_sec = display_window_sec
@@ -171,14 +171,14 @@ def udp_receive_data(port):
             x2val = get_float_for_address(x2addy, bndl_u)
             y1val = get_float_for_address(y1addy, bndl_u)
             y2val = get_float_for_address(y2addy, bndl_u)
-            if y1val == None:
-                y1val = 0
-            if y2val == None:
-                y2val = 1
+            # if y1val == None:
+            #     y1val = 0
+            # if y2val == None:
+            #     y2val = 1
             if textaddy != None:
             	text = get_string_for_address(textaddy, bndl_u)
             ds = marker.data_source
-            if x1val != None and x2val != None:
+            if x1val != None and x2val != None and y1val != None and y2val != None:
                 with threading.Lock():
                     ds.data["xs"].append([x1val, x2val])
                     ds.data["ys"].append([y1val, y2val])
@@ -232,9 +232,10 @@ def plot_ecg(run = True, make_new_figure = True, prefixes = ["/0"]):
     for pfx in prefixes:
         if make_new_figure == True:
             new_figure("ECG")
-    	Plot(pfx + "/time/relative", pfx + "/ecg/mwi")
+    	Plot(pfx + "/time/relative", pfx + "/delayed/ecg/raw")
     	Plot(pfx + "/time/relative", pfx + "/delayed/ecg/bpf")
-	Plot(pfx + "/peak/QRS/time/relative", pfx + "/peak/QRS/val", f = circle, color = "#0000FF")
+    	Plot(pfx + "/time/relative", pfx + "/ecg/mwi")
+	Plot(pfx + "/peak/QRS/time/relative", pfx + "/peak/QRS/val", f = cross, color = "#0000FF")
     	Plot(pfx + "/time/relative", pfx + "/I1", color = "#FF0000")
     	Plot(pfx + "/time/relative", pfx + "/I2", color = "#00FF00")
     	Plot(pfx + "/time/relative", pfx + "/F1", color = "#00FFFF")
@@ -257,9 +258,14 @@ def plot_heartrate_bpm(run = True, make_new_figure = True, prefixes = ["/0"]):
     for pfx in prefixes:
     	if make_new_figure == True:
             new_figure("Heartrate (BPM)")
-    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/BPM")
-    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/1")
-    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/2")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/BPM", f = cross, color = "#FF0000")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/1", f = cross, color = "#00FF00")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/2", f = cross, color = "#0000FF")
+    	Plot(pfx + "/time/relative", pfx + "/heart/rate/value/bpm", f = cross, color = "#00FFFF")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/BPM", color = "#FF0000")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/1", color = "#00FF00")
+    	Plot(pfx + "/peak/QRS/time/relative", pfx + "/avg/BPM/2", color = "#0000FF")
+    	Plot(pfx + "/time/relative", pfx + "/heart/rate/value/bpm", color = "#00FFFF")
     	if run == True:
             allon()
 
@@ -273,28 +279,17 @@ def plot_network(run = True, make_new_figure = True, prefixes = ["/0"]):
             allon()
 
 def plot_all(run = True, prefixes = ["/0"]):
-    plot_ecg(run = False, prefixes = prefixes)
-    # for pfx in prefixes:
-    #     Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/leftarm")
-    #     Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/rightarm")
-    	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/biopac/delayed")
-    	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/fabric/delayed")
-
-    	# new_figure("Heartrate (BPM) + Respiration")
-    	# Plot(pfx + "/time/relative", pfx + "/bpm")
-    	# Plot(pfx + "/time/relative", pfx + "/avg/bpm/1")
-    	# Plot(pfx + "/time/relative", pfx + "/avg/bpm/2")
-    	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/biopac/t200", color = "#FF00FF")
-    	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/fabric/t200", color = "#00FFFF")
-    	# Marker(pfx + "/time/relative", pfx + "/zero", pfx + "/bpm", pfx + "/marker/text")
-
-    plot_heartrate_bpm(run = False, prefixes = prefixes)
-    	#Marker(pfx + "/time/relative", pfx + "/zero", pfx + "/bpm", pfx + "/marker/text")
-    	# new_figure("Respiration")
-    	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/biopac/delayed", color = "#FF00FF")
-    	# Plot(pfx + "/time/relative", pfx + "/y0/stream/respiration/fabric/delayed", color = "#00FFFF")
-    	# Marker(pfx + "/time/relative", pfx + "/zero", pfx + "/y0/stream/respiration/biopac/delayed", pfx + "/marker/text")
-    	#plot_network(run = False)
+    for pfx in prefixes:
+	plot_ecg(run = False, prefixes = [pfx])
+    	plot_heartrate_bpm(run = False, prefixes = [pfx])
+        Marker(pfx + "/time/relative", pfx + "/trigger/BPM", pfx + "/time/relative", pfx + "/null/0")
+        # new_figure("Respiration")
+        # Plot(pfx + "/time/relative", pfx + "/delayed/respiration/biopac/raw")
+        # Marker(pfx + "/time/relative", pfx + "/trigger/respiration", pfx + "/time/relative", pfx + "/null/0")
+        new_figure("Lead Off")
+        Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/leftarm")
+        Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/rightarm")
+        plot_network(run = False, prefixes = [pfx])
     if(run == True):
         allon()
 
