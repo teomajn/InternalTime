@@ -31,13 +31,321 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"id" : "obj-79",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 856.0, 304.0, 44.0, 18.0 ],
+					"presentation_rect" : [ 859.0, 304.0, 0.0, 0.0 ],
+					"text" : "16800"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-78",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 808.0, 304.0, 44.0, 18.0 ],
+					"text" : "12000"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-64",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 840.0, 368.0, 120.0, 20.0 ],
+					"text" : "delay~ 48000 24000"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-63",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1248.0, 496.0, 70.0, 20.0 ],
+					"text" : "dac~ 13 14"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-62",
+					"maxclass" : "gain~",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1248.0, 326.0, 22.0, 140.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-61",
+					"maxclass" : "spectroscope~",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1080.0, 120.0, 300.0, 100.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1080.0, 72.0, 47.0, 20.0 ],
+					"text" : "adc~ 7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-59",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 928.0, 584.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1092.666626, 600.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1038.333374, 600.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-58",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1128.0, 681.0, 37.0, 18.0 ],
+					"text" : "open"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1072.0, 729.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-26",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1133.0, 721.0, 41.0, 20.0 ],
+					"text" : "click~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "FullPacket" ],
+					"patching_rect" : [ 1188.0, 680.0, 139.0, 20.0 ],
+					"text" : "o.route /delayed/ecg/bpf"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-21",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1188.0, 704.0, 43.0, 20.0 ],
+					"text" : "sig~ 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 4,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1160.0, 793.0, 71.0, 20.0 ],
+					"text" : "sfrecord~ 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-60",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "FullPacket", "FullPacket" ],
+					"patching_rect" : [ 984.0, 536.0, 181.0, 20.0 ],
+					"text" : "o.if bound(/schedule/peak/QRS)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 928.0, 624.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "ezdac~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 984.0, 808.0, 45.0, 45.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-54",
+					"maxclass" : "gain~",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 984.0, 656.0, 22.0, 140.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-53",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "list" ],
+					"patching_rect" : [ 984.0, 632.0, 194.0, 20.0 ],
+					"text" : "resonators~ 440. 1. 7. 800. 0.5 15."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-39",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "int", "bang" ],
+					"patching_rect" : [ 984.0, 600.0, 34.0, 20.0 ],
+					"text" : "t 1 b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "FullPacket", "FullPacket", "FullPacket", "FullPacket" ],
+					"patching_rect" : [ 984.0, 568.0, 182.0, 20.0 ],
+					"text" : "o.schedule /schedule/peak/QRS"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 440.0, 176.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-22",
 					"maxclass" : "flonum",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 360.0, 544.0, 50.0, 20.0 ]
+					"patching_rect" : [ 359.5, 536.0, 50.0, 20.0 ]
 				}
 
 			}
@@ -50,7 +358,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 360.0, 504.0, 72.0, 20.0 ],
+					"patching_rect" : [ 359.5, 496.0, 72.0, 20.0 ],
 					"text" : "o.route /RR"
 				}
 
@@ -106,7 +414,6 @@
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -139,13 +446,11 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-8",
-									"linecount" : 6,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 336.0, 384.0, 150.0, 102.0 ],
-									"text" : "/m : 0.,\n/S : 0.,\n/was/RR : 2.72497,\n/RR : 12.6654,\n/nnnn : 227,\n/was/m : 0.",
+									"patching_rect" : [ 336.0, 384.0, 150.0, 34.0 ],
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -488,13 +793,13 @@
 				"box" : 				{
 					"fontsize" : 12.0,
 					"id" : "obj-50",
-					"linecount" : 14,
+					"linecount" : 18,
 					"maxclass" : "o.expr.codebox",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 72.0, 654.0, 647.0, 209.0 ],
-					"text" : "if(/peak/QRS/bool == false, \n   progn(if(bound(/peak/hist/delayed/ecg/bpf/time/relative),            delete(/peak/hist/delayed/ecg/bpf/time/relative), nil),\nif(bound(/peak/hist/delayed/ecg/bpf/val), delete(/peak/hist/delayed/ecg/bpf/val), nil),\nif(bound(/peak/hist/ecg/mwi/time/relative), delete(/peak/hist/ecg/mwi/time/relative), nil),\nif(bound(/peak/hist/ecg/mwi/val), delete(/peak/hist/ecg/mwi/val), nil)), \n   nil),\nif(bound(/RR) & /counter/RR ?? 0 == 0, delete(/RR), nil),\nif(bound(/RR), /BPM = 60. / /RR, nil),\nif(bound(/avg/RR/1), /avg/BPM/1 = 60. / /avg/RR/1, nil),\nif(bound(/avg/RR/2), /avg/BPM/2 = 60. / /avg/RR/2, nil),\n/time/delta = /time - /was/time,\n/time/network/delta = /time/network - /was/time/network",
+					"patching_rect" : [ 72.0, 564.0, 813.0, 263.0 ],
+					"text" : "if(/peak/QRS/bool == false, \n   progn(if(bound(/peak/hist/delayed/ecg/bpf/time/relative),               \n            delete(/peak/hist/delayed/ecg/bpf/time/relative),\n            nil),\n         if(bound(/peak/hist/delayed/ecg/bpf/val), delete(/peak/hist/delayed/ecg/bpf/val), nil),\n         if(bound(/peak/hist/ecg/mwi/time/relative), delete(/peak/hist/ecg/mwi/time/relative), nil),\n         if(bound(/peak/hist/ecg/mwi/val), delete(/peak/hist/ecg/mwi/val), nil)), \n   #nil),\n   #/schedule/peak/QRS = (/ypdt/hist/time/relative - /peak/QRS/time/relative) + /time),\n   /schedule/peak/QRS = (/peak/QRS/time/relative - /ymdt/hist/time/relative) + /time),\nif(bound(/RR) & /counter/RR ?? 0 == 0, delete(/RR), nil),\nif(bound(/RR), /BPM = 60. / /RR, nil),\nif(bound(/avg/RR/1), /avg/BPM/1 = 60. / /avg/RR/1, nil),\nif(bound(/avg/RR/2), /avg/BPM/2 = 60. / /avg/RR/2, nil),\n/time/delta = /time - /was/time,\n/time/network/delta = /time/network - /was/time/network,\nif(/fsr/1/trigger == true, progn(/trigger/BPM = /BPM, /trigger/respiration = /delayed/respiration/biopac/raw), delete(/fsr/1/trigger))",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -552,13 +857,13 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-7",
-									"linecount" : 52,
+									"linecount" : 54,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 40.0, 112.0, 1194.0, 725.0 ],
-									"text" : "if((/peak/QRS/bool ?? false) == true,\n   progn(/was/peak/QRS/time/relative = /peak/QRS/time/relative ?? 0,\n         /was/peak/QRS/val = /peak/QRS/val ?? 0,\n         /was/peak/QRS/maxslope = /peak/QRS/maxslope ?? 0),\n   nil),\nif(bound(/peak/QRS/time/relative), delete(/peak/QRS/time/relative), nil),\nif(bound(/peak/QRS/val), delete(/peak/QRS/val), nil),\n\nif(/peak/hist/ecg/mwi/bool == true & /peak/hist/delayed/ecg/bpf/bool == true,\n   if(/peak/hist/ecg/mwi/val >= /I1 & /peak/hist/delayed/ecg/bpf/val >= /F1,\n      progn(/peak/QRS/bool = true, \n            /peak/QRS/time/relative = /peak/hist/delayed/ecg/bpf/time/relative, \n            /peak/QRS/val = /peak/hist/delayed/ecg/bpf/val,\n            /peak/QRS/maxslope = max((rest(/hist/delayed/ecg/bpf) - butlast(/hist/delayed/ecg/bpf)) / (rest(/hist/time/relative) - butlast(/hist/time/relative)))),\n      /peak/QRS/bool = false),\n   /peak/QRS/bool = false),\n\n# # #\n# update thresholds\n# # #\nif(/peak/hist/ecg/mwi/bool == true & /peak/hist/delayed/ecg/bpf/bool == true, \n   progn(/peaki = /peak/hist/ecg/mwi/val,\n         if(/peaki >= /I1, /SPKI = (0.125 * /peaki) + (0.875 * /SPKI), /NPKI = (0.125 * /peaki) + (0.875 * /NPKI)), \n         /I1 = /NPKI + (0.25 * (/SPKI - /NPKI)),\n         /I2 = 0.5 * /I1),\n   nil),\nif(/peak/hist/delayed/ecg/bpf/bool == true & /peak/hist/delayed/ecg/bpf/bool == true, \n   progn(/peakf = /peak/hist/delayed/ecg/bpf/val,\n         if(/peakf >= /F1, /SPKF = (0.125 * /peakf) + (0.875 * /SPKF), /NPKF = (0.125 * /peakf) + (0.875 * /NPKF)), \n         /F1 = /NPKF + (0.25 * (/SPKF - /NPKF)),\n         /F2 = 0.5 * /F1),\n   nil),\n\n# # #\n# Reject a QRS peak if:\n# ---it occurs less than 200 ms after the previous one\n# ---it occurs less than 360 ms after the previous one and has a maximal slope less than half of the previous one\n# # #\nif(/peak/QRS/bool == true,\n   if((/peak/QRS/time/relative - /was/peak/QRS/time/relative ?? 0 < .2) | \n      ((/peak/QRS/time/relative - /was/peak/QRS/time/relative ?? 0 < .36) & (/peak/QRS/maxslope < ((/was/peak/QRS/maxslope ?? 0) / 2.0))) |\n      (/peak/hist/delayed/ecg/bpf/time/relative > /peak/hist/ecg/mwi/time/relative) | \n      (/peak/hist/ecg/mwi/val < 0.5 * /was/peak/hist/ecg/mwi/val ?? /peak/hist/ecg/mwi/val),\n      /peak/QRS/bool = false,\n      nil),\n   nil),\n\nif(/peak/QRS/bool == false,\n   progn(if(bound(/peak/QRS/time/relative), delete(/peak/QRS/time/relative), nil),\n         if(bound(/peak/QRS/val), delete(/peak/QRS/val), nil), \n         if(bound(/peak/QRS/maxslope), delete(/peak/QRS/maxslope), nil)),\n   nil)",
+									"patching_rect" : [ 40.0, 112.0, 1194.0, 752.0 ],
+									"text" : "if((/peak/QRS/bool ?? false) == true,\n   progn(/was/peak/QRS/time/relative = /peak/QRS/time/relative ?? 0,\n         /was/peak/QRS/val = /peak/QRS/val ?? 0,\n         /was/peak/QRS/maxslope = /peak/QRS/maxslope ?? 0),\n   nil),\nif(bound(/peak/QRS/time/relative), delete(/peak/QRS/time/relative), nil),\nif(bound(/peak/QRS/val), delete(/peak/QRS/val), nil),\n\nif(/peak/hist/ecg/mwi/bool == true & /peak/hist/delayed/ecg/bpf/bool == true,\n   if(/peak/hist/ecg/mwi/val >= /I1 & /peak/hist/delayed/ecg/bpf/val >= /F1,\n      progn(/peak/QRS/bool = true, \n            /peak/QRS/time/relative = /peak/hist/delayed/ecg/bpf/time/relative, \n            /peak/QRS/val = /peak/hist/delayed/ecg/bpf/val,\n            /peak/QRS/maxslope = max((rest(/hist/delayed/ecg/bpf) - butlast(/hist/delayed/ecg/bpf)) / (rest(/hist/time/relative) - butlast(/hist/time/relative)))),\n      /peak/QRS/bool = false),\n   /peak/QRS/bool = false),\n\n# # #\n# update thresholds\n# # #\nif(/peak/hist/ecg/mwi/bool == true & /peak/hist/delayed/ecg/bpf/bool == true, \n   progn(/peaki = /peak/hist/ecg/mwi/val,\n         if(/peaki >= /I1, /SPKI = (0.125 * /peaki) + (0.875 * /SPKI), /NPKI = (0.125 * /peaki) + (0.875 * /NPKI)), \n         /I1 = /NPKI + (0.25 * (/SPKI - /NPKI)),\n         /I2 = 0.5 * /I1),\n   nil),\nif(/peak/hist/delayed/ecg/bpf/bool == true & /peak/hist/delayed/ecg/bpf/bool == true, \n   progn(/peakf = /peak/hist/delayed/ecg/bpf/val,\n         if(/peakf >= /F1, /SPKF = (0.125 * /peakf) + (0.875 * /SPKF), /NPKF = (0.125 * /peakf) + (0.875 * /NPKF)), \n         /F1 = /NPKF + (0.25 * (/SPKF - /NPKF)),\n         /F2 = 0.5 * /F1),\n   nil),\n\n# # #\n# Reject a QRS peak if:\n# ---it occurs less than 200 ms after the previous one\n# ---it occurs less than 360 ms after the previous one and has a maximal slope less than half of the previous one\n# ---the peak in the bpf signal is after the peak in the mwi signal (helps reject large t-waves)\n# ---the peak in the mwi is less than half of the previous peak in the mwi\n# # #\nif(/peak/QRS/bool == true,\n   if((/peak/QRS/time/relative - /was/peak/QRS/time/relative ?? 0 < .2) | \n      ((/peak/QRS/time/relative - /was/peak/QRS/time/relative ?? 0 < .36) & (/peak/QRS/maxslope < ((/was/peak/QRS/maxslope ?? 0) / 2.0))) |\n      (/peak/hist/delayed/ecg/bpf/time/relative > /peak/hist/ecg/mwi/time/relative) | \n      (/peak/hist/ecg/mwi/val < 0.5 * /was/peak/hist/ecg/mwi/val ?? /peak/hist/ecg/mwi/val),\n      /peak/QRS/bool = false,\n      nil),\n   nil),\n\nif(/peak/QRS/bool == false,\n   progn(if(bound(/peak/QRS/time/relative), delete(/peak/QRS/time/relative), nil),\n         if(bound(/peak/QRS/val), delete(/peak/QRS/val), nil), \n         if(bound(/peak/QRS/maxslope), delete(/peak/QRS/maxslope), nil)),\n   nil)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -666,22 +971,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 72.0, 800.0, 69.0, 20.0 ],
+					"patching_rect" : [ 72.0, 833.0, 69.0, 20.0 ],
 					"text" : "s to_bokeh"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 12.0,
-					"id" : "obj-34",
-					"maxclass" : "o.display",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 432.0, 605.0, 1144.0, 34.0 ],
-					"text" : "/hrv/SDSD : 0.",
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
 			}
@@ -935,7 +1226,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 760.0, 32.5, 20.0 ],
+									"patching_rect" : [ 50.0, 786.0, 32.5, 20.0 ],
 									"text" : "t l l"
 								}
 
@@ -990,7 +1281,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 80.0, 171.0, 32.0 ],
+									"patching_rect" : [ 50.0, 64.0, 171.0, 32.0 ],
 									"text" : "/mwilen = /fs * 0.15",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1005,7 +1296,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 518.0, 32.5, 20.0 ],
+									"patching_rect" : [ 50.0, 544.0, 32.5, 20.0 ],
 									"text" : "t l l"
 								}
 
@@ -1019,7 +1310,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 462.0, 827.0, 46.0 ],
+									"patching_rect" : [ 50.0, 488.0, 827.0, 46.0 ],
 									"text" : "/hist/ecg/sq ??= [],\n/hist/ecg/sq = length(/hist/ecg/sq) == /mwilen ? [rest(/hist/ecg/sq), /ecg/sq] : [/hist/ecg/sq, /ecg/sq]",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1034,7 +1325,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 50.0, 430.0, 50.0, 20.0 ],
+									"patching_rect" : [ 50.0, 456.0, 50.0, 20.0 ],
 									"text" : "o.union"
 								}
 
@@ -1048,7 +1339,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 558.0, 193.0, 20.0 ],
+									"patching_rect" : [ 50.0, 584.0, 193.0, 20.0 ],
 									"text" : "o.if length(/hist/ecg/sq) == /mwilen"
 								}
 
@@ -1062,7 +1353,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 286.0, 32.5, 20.0 ],
+									"patching_rect" : [ 50.0, 312.0, 32.5, 20.0 ],
 									"text" : "t l l"
 								}
 
@@ -1071,13 +1362,13 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-49",
-									"linecount" : 2,
+									"linecount" : 9,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 218.0, 834.0, 46.0 ],
-									"text" : "/hist/ecg/bpf ??= [],\n/hist/ecg/bpf = length(/hist/ecg/bpf) == /mwilen + 5 ? [rest(/hist/ecg/bpf), /ecg/bpf] : [/hist/ecg/bpf, /ecg/bpf]",
+									"patching_rect" : [ 50.0, 152.0, 1202.0, 141.0 ],
+									"text" : "#/hist/delayed/ecg/raw ??= [],\n#/hist/delayed/ecg/raw = length(/hist/delayed/ecg/raw) == /mwilen + 5 ? [rest(/hist/delayed/ecg/raw), /delayed/ecg/raw] : [/hist/delayed/ecg/raw, /delayed/ecg/raw],\n/hist/ecg/bpf ??= [],\n/hist/ecg/bpf = length(/hist/ecg/bpf) == /mwilen + 5 ? [rest(/hist/ecg/bpf), /ecg/bpf] : [/hist/ecg/bpf, /ecg/bpf],\n/hist/respiration/biopac/raw ??= [],\n/hist/respiration/biopac/raw = length(/hist/respiration/biopac/raw) == /mwilen + 5 ? [rest(/hist/respiration/biopac/raw), /respiration/biopac/raw] : [/hist/respiration/biopac/raw, /respiration/biopac/raw],\n/hist/fsr/1/trigger ??= [],\n/hist/fsr/1/trigger = length(/hist/fsr/1/trigger) == /mwilen + 5 ? [rest(/hist/fsr/1/trigger), /fsr/1/trigger] : [/hist/fsr/1/trigger, /fsr/1/trigger]",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1091,7 +1382,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 50.0, 190.0, 50.0, 20.0 ],
+									"patching_rect" : [ 50.0, 124.0, 50.0, 20.0 ],
 									"text" : "o.union"
 								}
 
@@ -1105,7 +1396,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 318.0, 163.0, 20.0 ],
+									"patching_rect" : [ 50.0, 344.0, 163.0, 20.0 ],
 									"text" : "o.if length(/hist/ecg/bpf) >= 5"
 								}
 
@@ -1114,13 +1405,13 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-23",
-									"linecount" : 2,
+									"linecount" : 5,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 624.0, 402.0, 46.0 ],
-									"text" : "/delayed/ecg/bpf = /hist/ecg/bpf[[2]],\n/ecg/mwi = sum(/hist/ecg/sq) / /mwilen #(1. / /mwilen)",
+									"patching_rect" : [ 50.0, 612.5, 510.0, 86.0 ],
+									"text" : "#/delayed/ecg/raw = /hist/delayed/ecg/raw[[2]],\n/delayed/ecg/bpf = /hist/ecg/bpf[[2]],\n/delayed/respiration/biopac/raw = /hist/respiration/biopac/raw[[2]],\n/delayed/fsr/1/trigger = /hist/fsr/1/trigger[[2]],\n/ecg/mwi = sum(/hist/ecg/sq) / /mwilen #(1. / /mwilen)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1134,7 +1425,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 350.0, 799.0, 46.0 ],
+									"patching_rect" : [ 50.0, 376.0, 799.0, 46.0 ],
 									"text" : "/ecg/df = sum((0.1 * [2., 1., -1., -2.]) * /hist/ecg/bpf[[0, 1, 3, 4]]), # derivative filter\n/ecg/sq = pow(/ecg/df, 2.) # squaring function",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1148,7 +1439,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 50.0, 40.0, 25.0, 25.0 ]
+									"patching_rect" : [ 50.0, 24.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -1159,7 +1450,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 792.0, 25.0, 25.0 ]
+									"patching_rect" : [ 50.0, 818.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -1241,7 +1532,7 @@
 									"destination" : [ "obj-46", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 73.0, 545.0, 893.0, 545.0, 893.0, 423.0, 90.5, 423.0 ],
+									"midpoints" : [ 73.0, 571.0, 893.0, 571.0, 893.0, 449.0, 90.5, 449.0 ],
 									"source" : [ "obj-43", 1 ]
 								}
 
@@ -1305,7 +1596,7 @@
 									"destination" : [ "obj-44", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 73.0, 313.0, 893.0, 313.0, 893.0, 183.0, 90.5, 183.0 ],
+									"midpoints" : [ 73.0, 338.0, 954.0, 338.0, 954.0, 111.0, 90.5, 111.0 ],
 									"source" : [ "obj-50", 1 ]
 								}
 
@@ -2121,8 +2412,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 664.0, 496.0, 257.0, 61.0 ],
-					"text" : "/otable/info/name : \"1017_table\",\n/otable/info/count : 0,\n/otable/info/bytecount : 0",
+					"patching_rect" : [ 485.5, 443.5, 257.0, 61.0 ],
+					"text" : "/otable/info/name : \"1015_table\",\n/otable/info/count : 0,\n/otable/info/bytecount : 0",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -2136,7 +2427,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 85.5, 900.0, 74.0, 20.0 ],
+					"patching_rect" : [ 85.5, 937.0, 74.0, 20.0 ],
 					"text" : "prepend set"
 				}
 
@@ -2150,7 +2441,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 72.0, 928.0, 65.0, 20.0 ],
+					"patching_rect" : [ 72.0, 969.0, 65.0, 20.0 ],
 					"text" : "o.prepend"
 				}
 
@@ -2162,10 +2453,10 @@
 					"id" : "obj-86",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 72.0, 848.0, 32.5, 20.0 ],
-					"text" : "t l l"
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 72.0, 885.0, 46.0, 20.0 ],
+					"text" : "t l l l"
 				}
 
 			}
@@ -2178,7 +2469,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 85.5, 872.0, 106.0, 20.0 ],
+					"patching_rect" : [ 85.5, 909.0, 106.0, 20.0 ],
 					"text" : "o.route /self/prefix"
 				}
 
@@ -2206,7 +2497,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 560.0, 944.0, 120.0, 18.0 ],
+					"patching_rect" : [ 560.0, 985.0, 120.0, 18.0 ],
 					"text" : "maxpacketsize 8192"
 				}
 
@@ -2220,7 +2511,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 560.0, 920.0, 60.0, 20.0 ],
+					"patching_rect" : [ 560.0, 961.0, 60.0, 20.0 ],
 					"text" : "loadbang"
 				}
 
@@ -2233,7 +2524,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 400.0, 994.0, 143.0, 20.0 ],
+					"patching_rect" : [ 400.0, 1035.0, 143.0, 20.0 ],
 					"text" : "udpsend localhost 11001"
 				}
 
@@ -2261,7 +2552,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 72.0, 960.0, 103.0, 20.0 ],
+					"patching_rect" : [ 72.0, 1001.0, 103.0, 20.0 ],
 					"text" : "thru o.out @main"
 				}
 
@@ -2777,7 +3068,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 235.0, 904.0, 67.0, 20.0 ],
+					"patching_rect" : [ 72.0, 857.0, 67.0, 20.0 ],
 					"text" : "r to_bokeh"
 				}
 
@@ -2790,7 +3081,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 215.5, 994.0, 143.0, 20.0 ],
+					"patching_rect" : [ 215.5, 1035.0, 143.0, 20.0 ],
 					"text" : "udpsend localhost 11000"
 				}
 
@@ -2849,7 +3140,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 72.0, 994.0, 137.0, 20.0 ],
+					"patching_rect" : [ 72.0, 1035.0, 137.0, 20.0 ],
 					"text" : "udpsend localhost 5005"
 				}
 
@@ -2911,15 +3202,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -2938,6 +3220,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-61", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-64", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -2947,10 +3247,37 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-68", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-26", 0 ]
 				}
 
 			}
@@ -3028,6 +3355,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-34", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -3041,6 +3377,78 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-56", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-59", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-39", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}
@@ -3145,7 +3553,34 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-74", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-60", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-50", 0 ]
@@ -3209,6 +3644,87 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-53", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-55", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-54", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-55", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-54", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-60", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-63", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 2 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-62", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -3250,6 +3766,24 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-74", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-64", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-78", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-64", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-79", 0 ]
 				}
 
 			}
@@ -3456,6 +3990,14 @@
 			}
 , 			{
 				"name" : "o.difference.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.schedule.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "resonators~.mxo",
 				"type" : "iLaX"
 			}
  ]
