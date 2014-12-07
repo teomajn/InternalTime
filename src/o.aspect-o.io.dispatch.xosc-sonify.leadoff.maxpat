@@ -65,7 +65,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 713.5, 336.0, 32.5, 20.0 ],
-					"presentation_rect" : [ 716.5, 340.0, 0.0, 0.0 ],
 					"text" : "*~"
 				}
 
@@ -80,7 +79,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 673.0, 304.0, 33.0, 20.0 ],
-					"presentation_rect" : [ 676.0, 308.0, 0.0, 0.0 ],
 					"text" : "sig~"
 				}
 
@@ -95,7 +93,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 673.0, 400.0, 42.0, 20.0 ],
-					"presentation_rect" : [ 676.0, 404.0, 0.0, 0.0 ],
 					"text" : "*~ 0.5"
 				}
 
@@ -110,7 +107,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 673.0, 360.0, 32.5, 20.0 ],
-					"presentation_rect" : [ 676.0, 364.0, 0.0, 0.0 ],
 					"text" : "*~"
 				}
 
@@ -125,7 +121,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 794.5, 304.0, 71.0, 20.0 ],
-					"presentation_rect" : [ 797.5, 308.0, 0.0, 0.0 ],
 					"text" : "phasor~ 30"
 				}
 
@@ -154,7 +149,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 504.5, 336.0, 32.5, 20.0 ],
-					"presentation_rect" : [ 507.5, 340.0, 0.0, 0.0 ],
 					"text" : "*~"
 				}
 
@@ -169,7 +163,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 464.0, 304.0, 33.0, 20.0 ],
-					"presentation_rect" : [ 467.0, 308.0, 0.0, 0.0 ],
 					"text" : "sig~"
 				}
 
@@ -184,7 +177,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 464.0, 400.0, 42.0, 20.0 ],
-					"presentation_rect" : [ 467.0, 404.0, 0.0, 0.0 ],
 					"text" : "*~ 0.5"
 				}
 
@@ -199,7 +191,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 464.0, 360.0, 32.5, 20.0 ],
-					"presentation_rect" : [ 467.0, 364.0, 0.0, 0.0 ],
 					"text" : "*~"
 				}
 
@@ -214,7 +205,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 585.5, 304.0, 71.0, 20.0 ],
-					"presentation_rect" : [ 588.5, 308.0, 0.0, 0.0 ],
 					"text" : "phasor~ 30"
 				}
 
@@ -243,7 +233,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 288.5, 336.0, 32.5, 20.0 ],
-					"presentation_rect" : [ 287.5, 336.0, 0.0, 0.0 ],
 					"text" : "*~"
 				}
 
@@ -258,7 +247,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 248.0, 304.0, 33.0, 20.0 ],
-					"presentation_rect" : [ 247.0, 304.0, 0.0, 0.0 ],
 					"text" : "sig~"
 				}
 
@@ -273,7 +261,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 248.0, 400.0, 42.0, 20.0 ],
-					"presentation_rect" : [ 247.0, 400.0, 0.0, 0.0 ],
 					"text" : "*~ 0.5"
 				}
 
@@ -288,7 +275,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 248.0, 360.0, 32.5, 20.0 ],
-					"presentation_rect" : [ 247.0, 360.0, 0.0, 0.0 ],
 					"text" : "*~"
 				}
 
@@ -303,7 +289,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 369.5, 304.0, 71.0, 20.0 ],
-					"presentation_rect" : [ 368.5, 304.0, 0.0, 0.0 ],
 					"text" : "phasor~ 30"
 				}
 
@@ -416,7 +401,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
 					"patching_rect" : [ 464.0, 264.0, 179.0, 20.0 ],
-					"presentation_rect" : [ 465.0, 268.0, 0.0, 0.0 ],
 					"text" : "o.route /leadoff/left /leadoff/right"
 				}
 
@@ -431,7 +415,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
 					"patching_rect" : [ 464.0, 160.0, 159.0, 20.0 ],
-					"presentation_rect" : [ 465.0, 164.0, 0.0, 0.0 ],
 					"text" : "o.if bound(/inputs/analogue)"
 				}
 
@@ -446,7 +429,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
 					"patching_rect" : [ 464.0, 200.0, 293.0, 46.0 ],
-					"presentation_rect" : [ 465.0, 204.0, 0.0, 0.0 ],
 					"text" : "/leadoff/left = /inputs/analogue[[1]],\n/leadoff/right = /inputs/analogue[[2]]",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
