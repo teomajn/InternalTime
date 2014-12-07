@@ -115,20 +115,24 @@ def new_figure(title = "", xlabel = "", ylabel = "", width = 1000, height = 300)
     hold()
 
 def update_plot():
-    global dirty, plots, update_thread, update_thread_continue
+    global dirty, plots
+    with threading.Lock():
+        if dirty == True:
+            dirty = False
+            s = cursession()
+            for plot in plots:
+                cursession().store_objects(plot.data_source)
+                #cs = cursession()
+                #plot.update(cs)
+            for marker in markers:
+                cursession().store_objects(marker.data_source)
+
+def update_cb():
+    global update_thread, update_thread_continue
     while True:
-        with threading.Lock():
-            if dirty == True:
-            	dirty = False
-            	s = cursession()
-            	for plot in plots:
-                    cursession().store_objects(plot.data_source)
-                    #cs = cursession()
-                    #plot.update(cs)
-            	for marker in markers:
-                    cursession().store_objects(marker.data_source)
-            if update_thread_continue == False:
-            	return
+        update_plot()
+        if update_thread_continue == False:
+            return
         time.sleep(0.1)
 
 def udp_receive_data(port):
@@ -234,10 +238,11 @@ def plot_ecg(run = True, make_new_figure = True, prefixes = ["/0"]):
             new_figure("ECG")
     	Plot(pfx + "/time/relative", pfx + "/delayed/ecg/raw")
     	Plot(pfx + "/time/relative", pfx + "/delayed/ecg/bpf")
-    	Plot(pfx + "/time/relative", pfx + "/ecg/mwi")
-	Plot(pfx + "/peak/QRS/time/relative", pfx + "/peak/QRS/val", f = cross, color = "#0000FF")
-    	Plot(pfx + "/time/relative", pfx + "/I1", color = "#FF0000")
-    	Plot(pfx + "/time/relative", pfx + "/I2", color = "#00FF00")
+    	Plot(pfx + "/time/relative", pfx + "/scaled/ecg/mwi")
+	Plot(pfx + "/peak/QRS/time/relative", pfx + "/peak/QRS/bpf", f = cross, color = "#0000FF")
+	Plot(pfx + "/searchback/peak/QRS/time/relative", pfx + "/searchback/peak/QRS/bpf", f = circle, color = "#0000FF")
+    	Plot(pfx + "/time/relative", pfx + "/scaled/I1", color = "#FF0000")
+    	Plot(pfx + "/time/relative", pfx + "/scaled/I2", color = "#00FF00")
     	Plot(pfx + "/time/relative", pfx + "/F1", color = "#00FFFF")
     	Plot(pfx + "/time/relative", pfx + "/F2", color = "#FFFF00")
 	#Marker(pfx + "/peak/hist/delayed/ecg/bpf/time/relative", pfx + "/peak/hist/delayed/ecg/bpf/val", pfx + "/peak/hist/ecg/mwi/time/relative", pfx + "/peak/hist/ecg/mwi/val")
@@ -286,10 +291,10 @@ def plot_all(run = True, prefixes = ["/0"]):
         # new_figure("Respiration")
         # Plot(pfx + "/time/relative", pfx + "/delayed/respiration/biopac/raw")
         # Marker(pfx + "/time/relative", pfx + "/trigger/respiration", pfx + "/time/relative", pfx + "/null/0")
-        new_figure("Lead Off")
-        Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/leftarm")
-        Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/rightarm")
-        plot_network(run = False, prefixes = [pfx])
+        # new_figure("Lead Off")
+        # Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/leftarm")
+        # Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/rightarm")
+        # plot_network(run = False, prefixes = [pfx])
     if(run == True):
         allon()
 
@@ -348,7 +353,7 @@ def start_update_thread():
     global update_thread_continue, update_thread
     try:
         update_thread_continue = True
-        update_thread = threading.Thread(target=update_plot)
+        update_thread = threading.Thread(target=update_cb)
         update_thread.start()
     except:
     	print "Error: couldn't start update thread"
