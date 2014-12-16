@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. activate ~/anaconda/envs/py2.7
+#. activate ~/anaconda/envs/py2.7
 
 echo
 echo "--------------------------------------------------"

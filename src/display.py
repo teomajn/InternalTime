@@ -287,6 +287,8 @@ def plot_all(run = True, prefixes = ["/0"]):
     for pfx in prefixes:
 	plot_ecg(run = False, prefixes = [pfx])
     	plot_heartrate_bpm(run = False, prefixes = [pfx])
+        Plot(pfx + "/delayed/time/relative", pfx + "/polar/heart/rate/value/bpm", color = "#00FFFF")
+        Plot(pfx + "/delayed/time/relative", pfx + "/polar/heart/rate/value/bpm", color = "#00FFFF", f = cross)
         Marker(pfx + "/time/relative", pfx + "/trigger/BPM", pfx + "/time/relative", pfx + "/null/0")
         # new_figure("Respiration")
         # Plot(pfx + "/time/relative", pfx + "/delayed/respiration/biopac/raw")
@@ -295,6 +297,9 @@ def plot_all(run = True, prefixes = ["/0"]):
         # Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/leftarm")
         # Plot(pfx + "/time/relative", pfx + "/ecg/leadoff/rightarm")
         # plot_network(run = False, prefixes = [pfx])
+        # new_figure("HRV (SDSD)")
+        # Plot(pfx + "/time/relative", pfx + "/HRV/SDSD/RR/1", color = "#FF0000")
+        # Plot(pfx + "/time/relative", pfx + "/HRV/SDSD/RR/1", color = "#FF0000", f = cross)
     if(run == True):
         allon()
 
@@ -402,7 +407,8 @@ def main(argv):
 
     d = vars(args)
     output_server(d["name"])
-    start_threads()
+    # start_threads()
+    start_data_thread()
         
 if __name__ == "__main__":
     main(sys.argv[1:])
