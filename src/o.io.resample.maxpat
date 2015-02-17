@@ -510,8 +510,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 120.5, 374.0, 34.0, 20.0 ],
-					"text" : "> 50"
+					"patching_rect" : [ 120.5, 374.0, 32.5, 20.0 ],
+					"text" : "> -1"
 				}
 
 			}
