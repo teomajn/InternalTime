@@ -4,11 +4,11 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 9,
+			"revision" : 7,
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 79.0, 45.0, 1449.0, 904.0 ],
+		"rect" : [ -9.0, 45.0, 1449.0, 904.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -398,7 +398,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 664.0, 547.5, 45.0, 45.0 ]
+					"patching_rect" : [ 730.0, 547.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -450,7 +450,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-23",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 6,
 					"numoutlets" : 6,
 					"outlettype" : [ "", "", "", "", "", "FullPacket" ],
 					"patching_rect" : [ 104.0, 112.0, 350.0, 20.0 ],
