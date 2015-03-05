@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 593.0, 44.0, 847.0, 924.0 ],
+		"rect" : [ 593.0, 45.0, 847.0, 924.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 50.0, 220.0, 50.0, 20.0 ],
-					"presentation_rect" : [ 46.0, 146.0, 0.0, 0.0 ],
 					"text" : "o.union"
 				}
 
